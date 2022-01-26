@@ -60,61 +60,81 @@
 
   <main class="main">
     <!--=========================TITLE=========================-->
-    <section class="home section" id="home">
-      <div class="home__container container grid">
-        <div class="home__content grid">
-          <div class="home__social"> <!--social icons-->
-            <a href="https://www.linkedin.com/in/antoine-fradin/" target="_blank" class="home__social-icon"> <!--"target" for a new web page-->
-              <i class="uil uil-linkedin-alt"></i>
-            </a>
-            <a href="https://github.com/antoinefradin" target="_blank" class="home__social-icon">
-              <i class="uil uil-github-alt"></i>
-            </a>
-            <a href="https://twitter.com/thegolfdata" target="_blank" class="home__social-icon">
-              <i class="uil uil-twitter-alt"></i>
-            </a>
-          </div>
+    <section class="title-section" id="page-title">
+      <div class="title__data"> <!--title+description-->
+        <h1 class="page__title">PORTFOLIO</h1>
+        <p class="page__description">This is my Portfolio  </p>
+      </div>
+    </section>
 
-          <div class="home__img"> <!--blob+photo-->
-            <svg class="home__blob" viewBox="0 0 200 187" xmlns="http://www.w3.org/2000/svg">
-              <mask id="mask0" mask-type="alpha"> <!--blob shape-->
-                <path d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 165.547 
-                  130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 129.362C2.45775 
-                  97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 -0.149132 97.9666 
-                  0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z"/>
-              </mask>
-              <g mask="url(#mask0)"> <!--grouped object-->
-                <path d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 
-                  165.547 130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 
-                  129.362C2.45775 97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 
-                  -0.149132 97.9666 0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z"/>
-    
-                <image class="home__blob-img" x='28' y='-26' xlink:href="img/PhotoCV-removebg.png">
 
-              </g>
-            </svg>
-          </div>
-
-          <div class="home__data"> <!--title+description-->
-            <h1 class="home__title">Hi, I'm Antoine</h1>
-            <h3 class="home__subtitle">Data Scientist</h3>
-            <p class="home__description">High level experience in data science and AI. </p>
-            <a href="#contact" class="button button--flex">
-              Contact Me <i class="uil uil-message button__icon"></i>
-            </a>
-          </div>
-
-          <!--<div class="home__scroll">
-            <a href="#about" class="home__scroll-button button--flex">
-              <i class="uil uil-mouse-alt home__scroll-mouse"></i>
-              <span class="home__scroll-name">Scroll down</span>
-              <i class="uil uil-arrow-down home__scroll-arrow"></i>
-            </a> 
-          </div>-->
-
+    <!--=========================PROJETCS MENU=========================-->
+    <section class="projects-menu section" id="menu">  
+      <div class="projects-menu__container container" id="projects-menu">
+        <ul class="projects__list grid">
+          <li class="projects__item">
+            <a href="#" class="projects__link active-link">All</a>
+          </li>
+          <li class="projects__item">
+            <a href="#" class="projects__link">AI/Data</a>
+          </li>
+          <li class="projects__item">
+            <a href="#" class="projects__link">Flutter</a>
+          </li>
+          <li class="projects__item">
+            <a href="#" class="projects__link">Golf</a>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <!--=========================PROJECTS=========================-->
+    <section class="projects section" id="projects">
+      <div class="projects__container container grid">
+        <div class="project">
+          <img src="https://source.unsplash.com/Z8XlmAj65iM" alt="" class="projects__img">
+        </div>
+        <div class="project" id="project-1">
+          <img src="https://source.unsplash.com/Z8XlmAj65iM" alt="" class="projects__img">
+        </div>
+        <div class="project" id="project-2">
+          <img src="https://source.unsplash.com/Z8XlmAj65iM" alt="" class="projects__img">
+        </div>
+        <div class="project" id="project-3">
+          <img src="https://source.unsplash.com/Z8XlmAj65iM" alt="" class="projects__img">
+        </div>
+        <div class="project" id="project-4">
+          <img src="https://source.unsplash.com/Z8XlmAj65iM" alt="" class="projects__img">
+        </div>
+        <div class="project" id="project-5">
+          <img src="https://source.unsplash.com/Z8XlmAj65iM" alt="" class="projects__img">
+        </div>
+        <div class="project" id="project-6">
+          <img src="https://source.unsplash.com/Z8XlmAj65iM" alt="" class="projects__img">
+        </div>
+        <div class="project" id="project-7">
+          <img src="https://source.unsplash.com/Z8XlmAj65iM" alt="" class="projects__img">
+        </div>
+        <div class="project" id="project-8">
+          <img src="https://source.unsplash.com/Z8XlmAj65iM" alt="" class="projects__img">
+        </div>
+        <div class="project" id="project-9">
+          <img src="https://source.unsplash.com/Z8XlmAj65iM" alt="" class="projects__img">
+        </div>
+        <div class="project" id="project-10">
+          <img src="https://source.unsplash.com/Z8XlmAj65iM" alt="" class="projects__img">
+        </div>
+        <div class="project" id="project-11">
+          <img src="https://source.unsplash.com/Z8XlmAj65iM" alt="" class="projects__img">
+        </div>
+        <div class="project" id="project-12">
+          <img src="https://source.unsplash.com/Z8XlmAj65iM" alt="" class="projects__img">
+        </div>
+        <div class="project" id="project-13">
+          <img src="https://source.unsplash.com/Z8XlmAj65iM" alt="" class="projects__img">
         </div>
       </div>
     </section>
+
   </main>
 
   <!--=========================FOOTER=========================-->
