@@ -115,7 +115,7 @@ img{
 
 /*=========================REUSABLE CSS CLASSES=========================*/
 .section{
-  padding: 2rem 0 4rem;
+  padding: 2rem 0 2rem;
 }
 
 .section__title{
@@ -135,7 +135,7 @@ img{
 
 /*=========================PAGE TITLE=========================*/
 .title-section{
-  margin: 6rem 0;
+  margin: 4rem 0 2rem;
   display: flex;
   justify-content: center;
 }
@@ -267,7 +267,7 @@ header{
 }
 
 /*Active Link*/
-.active-link{
+.nav__link.active-link{
   color: var(--first-color);
 }
 
@@ -305,64 +305,112 @@ header{
 
 /*=========================PROJECTS MENU=========================*/
 .projects-menu{
-  padding-top: 1rem;
+  padding: 1rem;
+  justify-content: center;
 }
 
 .projects-menu__container{
-  max-width: 300px;
   height: var(--header-height);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-
-@media screen and (max-width:767px) { /*Mobile Menu*/
-  
-}
+/*@media screen and (max-width:767px) {} /*Mobile Menu*/
 
 .projects__list{
-  /*grid-template-columns: repeat(3,1fr); 
-  gap: 2rem;*/
   display: flex;
 }
 
-.nav__link{
+.projects__link{
   display: flex;
-  flex-direction: column; /*icon above text*/
   align-items: center;
-  font-size: var(--small-font-size);
-  color: var(--title-color);
+  font-size: var(--smaller-font-size);
+  color: hsl(var(--hue-color),77%,56%,55%);
   font-weight: var(--font-medium);
 }
 
-.nav__link:hover{
-  color: var(--first-color);
+.projects__link:hover{
+  color: hsl(var(--hue-color),77%,56%);
 }
-
+/*Active Link*/
+.projects__link.active-link{
+  color: hsl(var(--hue-color),77%,56%);
+}
 
 
 /*=========================PROJECTS=========================*/
 .projects__container{
-  grid-template-columns: repeat(3,fit-content(100%));/*3,1fr);*/
+  grid-template-columns: repeat(3,fit-content(100%));
   gap : 1rem;
   justify-content: center;
   max-width: none!important;
 }
 
-.projects__img{ /*squared img*/
-  object-fit: cover;
+.project{
   width: 230px;
   height: 230px;
-  max-width: none;
+  position: relative;
+  display: none; /*flex*/
+  visibility: hidden;
+  opacity: 0;
+  justify-content: center;
+  justify-self: center;
+}
+
+.project.show-project{
+  display: flex;
+  visibility: visible;
+  opacity: 1;
+  animation: fade 2.5s;
+}
+@keyframes fade {
+  0% {
+      opacity: 0;
+  }
+
+  100% {
+      opacity: 1;
+  }
+}
+
+.projects__img{ /*squared img*/
+  object-fit: cover;
+  width: 100%;
   border-radius: .0rem;
   vertical-align: middle;
 }
 
-/*.project{
-  justify-self: center;
-  align-self: center;
-}*/
+.project__description_layer {
+  height: 100%;
+  position: absolute;
+  background: hsl(var(--hue-color),77%,56%,55%);
+  color: #fff;
+  visibility: hidden;
+  opacity: 0;
+  display: block;
+  padding: 1.25rem;
+  align-items: center;
+  justify-content: center;
+  transition: opacity .2s, visibility .2s;
+}
+
+.project:hover .project__description_layer {
+  visibility: visible;
+  opacity: 1;
+}
+
+.project__title{
+  color: white;
+  margin: 1rem 0 1rem;
+}
+
+.project__description{
+  color: white;
+  font-size: 0.67rem;
+}
+
+
 
 
 
@@ -444,7 +492,7 @@ header{
 
 /*=========================MEDIA QUERIES=========================*/
 /**For small devices**/
-@media screen and (max-width: 350px) {
+@media screen and (max-width: 350px) { 
   .container{
     margin-left: var(--mb-1);
     margin-right: var(--mb-1);
@@ -456,23 +504,33 @@ header{
   .nav__list{
     column-gap: 0;
   }
-  
+
 }
 
-@media screen and (max-width: 467px) {
-  
+@media screen and (max-width: 567px) {
+  .title-section{
+    margin: 2rem 0;
+  }
+  .projects__container{
+    grid-template-columns: 1fr;
+  }
 
 }
 
 
 /**For medium devices**/
 @media screen and (min-width: 568px) {
+  .projects__container{
+    grid-template-columns: repeat(2,fit-content(100%));
+  }
+  
   .footer__container{
     grid-template-columns: repeat(2,1fr);
   }
 }
 
 @media screen and (min-width: 768px) {
+
   .container{
     margin-left: auto;
     margin-right: auto;
@@ -480,9 +538,7 @@ header{
   body{
     margin: 0;
   }
-  .section{
-    padding: 6rem 0 2rem;
-  }
+  
   .section__subtitle{
     margin-bottom: 4rem;
   }
@@ -513,9 +569,16 @@ header{
     margin-left: auto;
   }
 
+  .projects{
+    padding-bottom: 4rem;
+  }
+  .projects__container{
+    grid-template-columns: repeat(3,fit-content(100%));
+  }
   .projects-menu{
     padding-top: 1rem;
   }
+
 
   .footer__container{
     grid-template-columns: repeat(3,1fr);
@@ -537,6 +600,10 @@ header{
 
 /**For large devices**/
 @media screen and (min-width: 1024px) {
+  .title-section{
+    margin: 6rem 0 4rem;
+  }
+  
   .header,
   .main,
   .footer__container{
